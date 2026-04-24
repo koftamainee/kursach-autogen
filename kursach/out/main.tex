@@ -33,8 +33,8 @@
 \newfontfamily\cyrillicfonttt{DejaVu Sans Mono}[Script=Cyrillic]
 \setmonofont{DejaVu Sans Mono}
 \setstretch{1.15}
-\titleformat{\section}{\normalfont\fontsize{16}{24}\selectfont}{\thesection}{1em}{}
-\titleformat{\subsection}{\normalfont\fontsize{16}{24}\selectfont}{\thesubsection}{1em}{}
+\titleformat{\section}{\normalfont\bfseries\fontsize{16}{24}\selectfont}{\thesection}{1em}{}
+\titleformat{\subsection}{\normalfont\bfseries\fontsize{16}{24}\selectfont}{\thesubsection}{1em}{}
 
 \lstset{
   basicstyle=\small\ttfamily,
@@ -61,27 +61,38 @@
 \begin{document}
 
 \begin{titlepage}
-\centering
-
-\includegraphics[height=2.5cm]{img/logo.png}\\
-[0.5cm]
-Тестовый университет\\[0.2cm]
-Кафедра тестирования\\[2cm]
-
-Комплексная оценка инструмента\\[0.5cm]
-\textbf{\Large Минимальная курсовая работа для полного тестирования функционала}\\[3cm]
-
-\begin{flushright}
-\begin{tabular}{l}
-Выполнил: Тестер Тестингтон\\
-Группа: TST-00\\[0.5cm]
-Руководитель: Д-р Руководитель\\
-Профессор, д-р естественных наук\\
-\end{tabular}
-\end{flushright}
-
-\vfill
-Тестоввиль --- 2026
+\begin{center}
+	{\large \includegraphics[height=2.5cm]{img/logo.png}\\
+\bigskip
+Тестовый университет
+		\bigskip
+		Кафедра тестирования}
+	\bigskip
+	\vfill \textsc{\Large курсовая работа} \\
+	{\large по дисциплине <<Комплексная оценка инструмента>>}
+	\bigskip
+	на тему: Минимальная курсовая работа для полного тестирования функционала
+\end{center}
+\vspace*{1.5cm}
+\hfill
+\begin{minipage}{.6\linewidth}
+	\begin{tabular}{c}
+		\textbf{Выполнил:} студент группы TST-00    \\\hline \\[.3cm]
+		{\large Тестер Тестингтон}                        \\ \hline \scriptsize{(Фамилия, имя, отчество)}
+		\\[.3cm] \\ \hline
+		\scriptsize{(подпись)}                        \\[.3cm]
+		\textbf{Принял: }\hfill Профессор, д-р естественных наук \\\hline
+		\\[.3cm]
+		Д-р Руководитель                               \\ \hline
+		\scriptsize{(Фамилия, имя, отчество)}
+		\\[.3cm] \\ \hline
+		\scriptsize{(подпись)}
+	\end{tabular}
+	\vspace*{1cm}
+\end{minipage}
+\centerline{\textbf{Оценка}: \hspace*{8cm} \textbf{Дата}: \hspace*{2cm}}
+\vspace*{1cm}
+\centerline{Тестоввиль, 2026}
 
 \end{titlepage}
 \clearpage

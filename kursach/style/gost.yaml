@@ -20,7 +20,7 @@ fonts:
     size: 16pt
     line_spacing: 1.5
     align: left
-    bold: false
+    bold: true
   caption:
     family: "Times New Roman"
     size: 12pt

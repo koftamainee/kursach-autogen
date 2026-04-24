@@ -11,7 +11,6 @@ pub fn render(doc: &Document) -> String {
         None => String::new(),
     };
 
-    // The grade/date line is shown by default; opt out with `grade_line: false` in meta.
     let grade_line = if m.grade_line {
         "\\centerline{\\textbf{Оценка}: \\hspace*{8cm} \\textbf{Дата}: \\hspace*{2cm}}\n\
          \\vspace*{1cm}\n"
@@ -27,7 +26,7 @@ pub fn render(doc: &Document) -> String {
 
     let chair_line = match &m.chair {
         Some(c) => format!(
-            "\t\\bigskip \\\\\n\t\\textbf{{{}}}\n",
+            "\t\\bigskip\n\t\\textbf{{{}}}\n",
             c
         ),
         None => String::new(),
@@ -41,10 +40,10 @@ pub fn render(doc: &Document) -> String {
 	{{\large {logo}{university}{faculty}
 		\bigskip
 		{department}}}
-	\bigskip \\
+	\bigskip
 {chair}	\vfill \textsc{{\Large {doc_type}}} \\
 	{{\large по дисциплине <<{subject}>>}}
-	\bigskip \\
+	\bigskip
 	на тему: {title}
 \end{{center}}
 \vspace*{{1.5cm}}
