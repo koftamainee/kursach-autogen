@@ -1,0 +1,47 @@
+# style/gost.yaml
+page:
+  margins:
+    left: 20mm
+    right: 15mm
+    top: 15mm
+    bottom: 15mm
+  numbering:
+    start_from: 1
+    show_on_title: false
+fonts:
+  main:
+    family: "Times New Roman"
+    size: 14pt
+    line_spacing: 1.15
+    align: justify
+    indent: true
+  heading:
+    family: "Times New Roman"
+    size: 16pt
+    line_spacing: 1.5
+    align: left
+    bold: false
+  caption:
+    family: "Times New Roman"
+    size: 12pt
+    line_spacing: 1.0
+    italic: true
+  listing_body:
+    family: "DejaVu Sans Mono"
+    size: 12pt
+    line_spacing: 1.0
+    align: left
+figures:
+  align: center
+  caption_position: below
+  caption_format: "Figure {n}. {text}"
+tables:
+  align: center
+  caption_position: above
+  caption_format: "Table {n}. {text}"
+listings:
+  caption_position: above
+  caption_format: "Listing {n}. {text}"
+bibliography:
+  standard: GOST-7.0.100-2018
+  label_format: "[{n}]"

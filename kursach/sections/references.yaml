@@ -1,0 +1,34 @@
+id: references
+title: "Список литературы"
+numbered: false
+entries:
+  - id: ref.knuth
+    type: book
+    authors: ["Кнут Д.Э."]
+    title: "Искусство программирования, Том 1"
+    publisher: "Аддисон-Уэсли"
+    city: "Рединг"
+    year: 1997
+    pages: 672
+  - id: ref.shannon
+    type: article
+    authors: ["Шеннон К.Э."]
+    title: "Математическая теория связи"
+    journal: "Технический журнал Bell System"
+    year: 1948
+    volume: "27"
+    pages: "379–423"
+  - id: ref.qt
+    type: online
+    authors: []
+    title: "Документация Qt"
+    url: "https://doc.qt.io"
+    accessed: "2026-04-24"
+  - id: ref.ivanov
+    type: thesis
+    authors: ["Иванов И.И."]
+    title: "Методы вероятностного моделирования"
+    degree: "дис. ... канд. техн. наук"
+    city: "Москва"
+    year: 2020
+    pages: 150

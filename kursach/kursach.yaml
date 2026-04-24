@@ -1,0 +1,22 @@
+version: "1"
+meta:
+  university: "Тестовый университет"
+  department: "Кафедра тестирования"
+  subject: "Комплексная оценка инструмента"
+  title: "Минимальная курсовая работа для полного тестирования функционала"
+  author:
+    name: "Тестер Тестингтон"
+    group: "TST-00"
+  supervisor:
+    name: "Д-р Руководитель"
+    title: "Профессор, д-р естественных наук"
+  year: 2026
+  city: "Тестоввиль"
+  logo: "img/logo.png"
+  abstract_: |
+    В данном документе систематически проверяется каждая возможность конвертера kursach из YAML в LaTeX. Включены все типы блоков, маркеры, стили и записи в списке литературы.
+style: !import "style/gost.yaml"
+document:
+  - !import "sections/intro.yaml"
+  - !import "sections/main.yaml"
+  - !import "sections/references.yaml"

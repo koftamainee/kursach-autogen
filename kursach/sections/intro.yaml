@@ -1,0 +1,15 @@
+id: intro
+title: "Введение"
+numbered: false
+body:
+  - type: paragraph
+    text: |
+      В этом введении объясняется область тестирования. Ключевая ссылка — {{cite:ref.knuth}}. Краткий обзор см. в {{ref:fig.result}} на странице {{pageref:fig.result}}. Подробнее — на {{url:https://example.com}}. {{bold:Важное примечание:}} {{italic:все возможности продемонстрированы}} с {{code:вложенными}} маркерами, например {{bold:см. {{cite:ref.shannon}}}}.
+  - type: note
+    text: "Этот документ создан автоматически для тестирования конвертера."
+  - type: warning
+    title: "Предупреждение"
+    text: "Не использовать в производстве без проверки."
+  - type: page_break
+  - type: raw_latex
+    content: '\vspace{0.5cm}'

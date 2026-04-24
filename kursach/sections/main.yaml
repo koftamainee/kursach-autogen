@@ -1,0 +1,119 @@
+id: main
+title: "Демонстрация возможностей"
+numbered: true
+body:
+  - type: paragraph
+    text: |
+      Этот раздел содержит все возможные типы блоков. Ниже приведена формула с идентификатором.
+  - type: formula
+    id: eq.bayes
+    content: 'P(A \mid B) = \frac{P(B \mid A)\,P(A)}{P(B)}'
+  - type: formula
+    content: 'E = mc^2'
+  - type: figure
+    id: fig.result
+    path: "img/result.png"
+    caption: "Результат моделирования"
+    width: 0.8
+  - type: figure_group
+    id: fig.comparison
+    caption: "Сравнение методов"
+    layout: horizontal
+    figures:
+      - path: "img/method_a.png"
+        subcaption: "Метод А"
+        width: 0.45
+      - path: "img/method_b.png"
+        subcaption: "Метод Б"
+        width: 0.45
+  - type: page_break
+  - type: listing
+    id: lst.main
+    language: C++
+    caption: "Главный цикл моделирования"
+    path: "src/main.cpp"
+    range: [0, 40]
+  - type: listing
+    id: lst.formula
+    language: Python
+    caption: "Вычисление по формуле Байеса"
+    content: |
+      def bayes(p_a, p_b_given_a, p_b):
+          return p_b_given_a * p_a / p_b
+  - type: page_break
+  - type: table
+    id: tbl.results
+    caption: "Результаты экспериментов"
+    columns: ["Параметр", "Значение", "Единица измерения"]
+    rows:
+      - ["Объём выборки", "1000", "—"]
+      - ["Среднее", "3.14", "с"]
+      - ["Стандартное отклонение", "0.27", "с"]
+  - type: list
+    ordered: false
+    items:
+      - "Неупорядоченный пункт 1"
+      - "Неупорядоченный пункт 2"
+  - type: list
+    ordered: true
+    items:
+      - "Первый шаг"
+      - "Второй шаг"
+      - type: listing
+        id: lst.nested
+        language: Bash
+        caption: "Вложенный листинг"
+        content: "cargo test"
+  - type: algorithm
+    id: alg.search
+    caption: "Двоичный поиск"
+    numbered: true
+    steps:
+      - kind: require
+        text: 'отсортированный массив $A$, целевое значение $x$'
+      - kind: statement
+        text: '$lo \gets 0$, $hi \gets n-1$'
+      - kind: while
+        cond: 'lo \leq hi'
+        then:
+          - kind: statement
+            text: '$mid \gets \lfloor(lo+hi)/2\rfloor$'
+          - kind: if
+            cond: 'A[mid] = x'
+            then:
+              - kind: return
+                text: '$mid$'
+            else_:
+              - kind: if
+                cond: 'A[mid] < x'
+                then:
+                  - kind: statement
+                    text: '$lo \gets mid + 1$'
+                else_:
+                  - kind: statement
+                    text: '$hi \gets mid - 1$'
+      - kind: return
+        text: '$-1$'
+      - kind: comment
+        text: 'Поиск завершён'
+      - kind: ensure
+        text: 'индекс $x$ или $-1$'
+      - kind: for
+        var: 'i \in 1..n'
+        then:
+          - kind: statement
+            text: 'печать $i$'
+  - type: note
+    title: "Важно"
+    text: "Алгоритм {{bold:двоичного поиска}} требует отсортированных входных данных."
+  - type: warning
+    title: "Предупреждение"
+    text: "Не используйте отрицательные индексы."
+subsections:
+  - id: main-sub
+    title: "Пример подраздела"
+    numbered: true
+    body:
+      - type: paragraph
+        text: |
+          Этот подраздел подтверждает обработку вложенных разделов. Также приведена ссылка на {{cite:ref.ivanov}}.
