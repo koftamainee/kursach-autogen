@@ -31,7 +31,7 @@ pub fn render(doc: &Document) -> String {
 \end{{flushright}}
 
 \vfill
-{city} \\cyrdash {year}
+{city} --- {year}
 
 \end{{titlepage}}
 \clearpage

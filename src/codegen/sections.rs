@@ -27,7 +27,13 @@ fn render_section(section: &Section, depth: usize) -> Result<String> {
         _ => "subsubsection",
     };
 
-    out.push_str(&format!("{}{{{}}}\n", cmd, section.title));
+
+    match &section.kind {
+        SectionKind::Bibliography { .. } => {  }
+        SectionKind::Regular { .. } => {
+            out.push_str(&format!("{}{{{}}}\n", cmd, section.title));
+        }
+    }
 
     if !section.numbered {
         out.push_str(&format!(
@@ -75,7 +81,7 @@ fn format_bib_entry(entry: &crate::ir::types::BibEntry) -> String {
         BibKind::Book { authors, title, publisher, year, city, pages } => {
             let authors_str = authors.join(", ");
             let pgs = pages.map(|p| format!(" {} с.", p)).unwrap_or_default();
-            format!("{} {}. \\cyrdash {}: {}, {}.{}",
+            format!("{} {}. --- {}: {}, {}.{}",
                     authors_str, title, city, publisher, year, pgs)
         }
         BibKind::Article { authors, title, journal, year, volume, pages } => {
@@ -91,7 +97,7 @@ fn format_bib_entry(entry: &crate::ir::types::BibEntry) -> String {
                 format!("{} ", authors.join(", "))
             };
             format!(
-                "{}{}. \\cyrdash URL: \\url{{{}}} (дата обращения: {}).",
+                "{}{}. --- URL: \\url{{{}}} (дата обращения: {}).",
                 authors_str, title, url, accessed,
             )
         }
@@ -99,7 +105,7 @@ fn format_bib_entry(entry: &crate::ir::types::BibEntry) -> String {
             let authors_str = authors.join(", ");
             let deg = degree.as_deref().unwrap_or("дис. ... канд. техн. наук");
             let pgs = pages.map(|p| format!(" {} с.", p)).unwrap_or_default();
-            format!("{} {}: {}. \\cyrdash {}, {}.{}",
+            format!("{} {}: {}. --- {}, {}.{}",
                     authors_str, title, deg, city, year, pgs)
         }
     }
