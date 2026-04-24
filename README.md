@@ -29,22 +29,26 @@ kursach kursach.yaml --output out/
 version: "1"
 
 meta:
-  university: "My University"
-  department: "Department of Computer Science"
-  subject: "Probability Theory"
-  title: "Course Work. Variant 1"
+  university: "МИНИСТЕРСТВО НАУКИ И ВЫСШЕГО ОБРАЗОВАНИЯ РФ"
+  faculty: "(Технологии. Дизайн. Искусство.)"   # optional — shown below university in bold
+  department: "Институт Информационных технологий и цифровой трансформации"
+  chair: "Кафедра <<Искусственного интеллекта, прикладной математики и программирования>>"
+  # optional — shown in bold between department and doc type
+  subject: "Базы данных и программирование"
+  title: "Задачи управления базой данных"
+  doc_type: "курсовой работа"                    # optional — defaults to "курсовая работа"
   author:
-    name: "Ivan Ivanov"
+    name: "Иванов Иван Иванович"
     group: "CS-21"
   supervisor:
-    name: "Pyotr Petrov"
-    title: "Associate Professor, PhD"
-  year: 2026
-  city: "Moscow"
+    name: "Мокряков Алексей Викторович"
+    title: "доцент кафедры ИИПМиП"              # role label shown next to "Принял:"
+  year: 2025
+  city: "Москва"
   logo: "img/logo.png"        # optional — path to university logo image
   abstract_: |                # optional — shown after title page, before TOC
     This work studies probabilistic modelling of queuing systems.
-    Implemented in C++23 with Qt6. Total length: 30 pages.
+  grade_line: true             # optional — show «Оценка / Дата» line, default true
 
 style: !import "style/gost.yaml"
 
@@ -53,7 +57,7 @@ document:
   - !import "sections/references.yaml"
 ```
 
-All `meta` fields except `logo` and `abstract_` are required.
+All `meta` fields except `faculty`, `chair`, `doc_type`, `logo`, `abstract_`, and `grade_line` are required.
 
 ---
 

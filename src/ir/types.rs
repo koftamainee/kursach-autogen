@@ -15,9 +15,21 @@ pub struct Document {
 #[derive(Debug, Deserialize)]
 pub struct Meta {
     pub university: String,
+    /// Optional faculty / institute line shown below the university name.
+    /// Example: "(Технологии. Дизайн. Искусство.)"
+    #[serde(default)]
+    pub faculty: Option<String>,
     pub department: String,
+    /// Optional chair (кафедра) line. Rendered in bold between department and
+    /// document type. Example: "Кафедра <<Искусственного интеллекта...>>"
+    #[serde(default)]
+    pub chair: Option<String>,
     pub subject: String,
     pub title: String,
+    /// Type of work shown in SMALL CAPS above the subject line.
+    /// Defaults to "курсовая работа" if omitted.
+    #[serde(default)]
+    pub doc_type: Option<String>,
     pub author: Person,
     pub supervisor: Supervisor,
     pub year: u32,
@@ -26,7 +38,13 @@ pub struct Meta {
     pub logo: Option<PathBuf>,
     #[serde(default)]
     pub abstract_: Option<String>,
+    /// Show the «Оценка / Дата» line at the bottom of the title page.
+    /// Defaults to true.
+    #[serde(default = "default_true")]
+    pub grade_line: bool,
 }
+
+fn default_true() -> bool { true }
 
 #[derive(Debug, Deserialize)]
 pub struct Person {
