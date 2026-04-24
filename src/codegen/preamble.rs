@@ -98,13 +98,16 @@ fn render_fonts(s: &Style) -> String {
 
     let heading_pt = heading.size.trim_end_matches("pt");
     let heading_baseline = (heading_pt.parse::<f32>().unwrap_or(16.0) * heading.line_spacing) as u32;
+
+    let bold_cmd = if heading.bold == Some(true) { "\\bfseries" } else { "" };
+
     out.push_str(&format!(
-        "\\titleformat{{\\section}}{{\\normalfont\\fontsize{{{}}}{{{}}}\\selectfont}}{{\\thesection}}{{1em}}{{}}\n",
-        heading_pt, heading_baseline,
+        "\\titleformat{{\\section}}{{\\normalfont{}\\fontsize{{{}}}{{{}}}\\selectfont}}{{\\thesection}}{{1em}}{{}}\n",
+        bold_cmd, heading_pt, heading_baseline,
     ));
     out.push_str(&format!(
-        "\\titleformat{{\\subsection}}{{\\normalfont\\fontsize{{{}}}{{{}}}\\selectfont}}{{\\thesubsection}}{{1em}}{{}}\n",
-        heading_pt, heading_baseline,
+        "\\titleformat{{\\subsection}}{{\\normalfont{}\\fontsize{{{}}}{{{}}}\\selectfont}}{{\\thesubsection}}{{1em}}{{}}\n",
+        bold_cmd, heading_pt, heading_baseline,
     ));
 
     out.push('\n');

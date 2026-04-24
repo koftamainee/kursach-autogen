@@ -1,0 +1,242 @@
+\documentclass[14pt,a4paper]{extarticle}
+
+\usepackage[left=20mm, right=15mm, top=15mm, bottom=15mm]{geometry}
+\usepackage{polyglossia}
+\setdefaultlanguage{russian}
+\setotherlanguage{english}
+\defaultfontfeatures{Mapping=tex-text}
+\usepackage{graphicx}
+\usepackage{subcaption}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{hyperref}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{caption}
+\usepackage{setspace}
+\usepackage{indentfirst}
+\usepackage{titlesec}
+\usepackage{tocloft}
+\usepackage{longtable}
+\usepackage{booktabs}
+\usepackage{fancyhdr}
+\usepackage{tcolorbox}
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+\captionsetup[figure]{position=below, labelsep=period, font={small,it}}
+\captionsetup[table]{position=above, labelsep=period, font={small,it}}
+
+\usepackage{fontspec}
+\setmainfont{Times New Roman}
+\newfontfamily\cyrillicfont{Times New Roman}[Script=Cyrillic]
+\newfontfamily\cyrillicfontsf{Times New Roman}[Script=Cyrillic]
+\newfontfamily\cyrillicfonttt{DejaVu Sans Mono}[Script=Cyrillic]
+\setmonofont{DejaVu Sans Mono}
+\setstretch{1.15}
+\titleformat{\section}{\normalfont\fontsize{16}{24}\selectfont}{\thesection}{1em}{}
+\titleformat{\subsection}{\normalfont\fontsize{16}{24}\selectfont}{\thesubsection}{1em}{}
+
+\lstset{
+  basicstyle=\small\ttfamily,
+  breaklines=true,
+  frame=single,
+  captionpos=t,
+  numbers=left,
+  numberstyle=\tiny,
+  tabsize=4,
+  showstringspaces=false,
+  keywordstyle=\color{blue},
+  commentstyle=\color{gray},
+  stringstyle=\color{orange},
+}
+
+\hypersetup{colorlinks=true, linkcolor=black, urlcolor=blue, citecolor=black}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot[C]{\thepage}
+\renewcommand{\headrulewidth}{0pt}
+\setlength{\parindent}{1.25cm}
+
+
+\begin{document}
+
+\begin{titlepage}
+\centering
+
+\includegraphics[height=2.5cm]{img/logo.png}\\
+[0.5cm]
+Тестовый университет\\[0.2cm]
+Кафедра тестирования\\[2cm]
+
+Комплексная оценка инструмента\\[0.5cm]
+\textbf{\Large Минимальная курсовая работа для полного тестирования функционала}\\[3cm]
+
+\begin{flushright}
+\begin{tabular}{l}
+Выполнил: Тестер Тестингтон\\
+Группа: TST-00\\[0.5cm]
+Руководитель: Д-р Руководитель\\
+Профессор, д-р естественных наук\\
+\end{tabular}
+\end{flushright}
+
+\vfill
+Тестоввиль --- 2026
+
+\end{titlepage}
+\clearpage
+\section*{Реферат}
+\addcontentsline{toc}{section}{Реферат}
+
+В данном документе систематически проверяется каждая возможность конвертера kursach из YAML в LaTeX. Включены все типы блоков, маркеры, стили и записи в списке литературы.
+\clearpage
+
+\tableofcontents
+\clearpage
+
+\section*{Введение}
+\addcontentsline{toc}{section}{Введение}
+
+В этом введении объясняется область тестирования. Ключевая ссылка — Список источников \cite{ref.knuth}. Краткий обзор см. в рис. \ref{fig.result} на странице \pageref{fig.result}. Подробнее — на \url{https://example.com}. \textbf{Важное примечание:} \textit{все возможности продемонстрированы} с \texttt{вложенными} маркерами.
+
+
+\begin{tcolorbox}[colback=blue!5!white, colframe=blue!50!black, title=Примечание]
+Этот документ создан автоматически для тестирования конвертера.
+\end{tcolorbox}
+
+\begin{tcolorbox}[colback=red!5!white, colframe=red!60!black, title=Предупреждение]
+Не использовать в производстве без проверки.
+\end{tcolorbox}
+
+\clearpage
+
+\vspace{0.5cm}
+
+\section{Демонстрация возможностей}
+
+Этот раздел содержит все возможные типы блоков. Ниже приведена формула с идентификатором.
+
+
+\begin{equation}\label{eq.bayes}
+P(A \mid B) = \frac{P(B \mid A)\,P(A)}{P(B)}
+\end{equation}
+
+\[
+E = mc^2
+\]
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.8\linewidth]{img/result.png}
+\caption{Результат моделирования}\label{fig.result}
+\end{figure}
+
+\begin{figure}[h]
+\centering
+\begin{subfigure}[b]{0.45\linewidth}
+\includegraphics[width=\linewidth]{img/method_a.png}
+\caption{Метод А}
+\end{subfigure}
+\hfill
+\begin{subfigure}[b]{0.45\linewidth}
+\includegraphics[width=\linewidth]{img/method_b.png}
+\caption{Метод Б}
+\end{subfigure}
+\hfill
+\caption{Сравнение методов}\label{fig.comparison}
+\end{figure}
+
+\clearpage
+
+\lstinputlisting[language=C++, caption={Главный цикл моделирования}, label=lst.main, firstline=0, lastline=40]{src/main.cpp}
+
+\begin{lstlisting}[language=Python, caption={Вычисление по формуле Байеса}, label=lst.formula]
+def bayes(p_a, p_b_given_a, p_b):
+    return p_b_given_a * p_a / p_b
+\end{lstlisting}
+
+\clearpage
+
+\begin{table}[h]
+\centering
+\caption{Результаты экспериментов}\label{tbl.results}
+\begin{tabular}{l | l | l}
+\hline
+Параметр & Значение & Единица измерения \\
+\hline
+Объём выборки & 1000 & — \\
+Среднее & 3.14 & с \\
+Стандартное отклонение & 0.27 & с \\
+\hline
+\end{tabular}
+\end{table}
+
+\begin{itemize}
+  \item Неупорядоченный пункт 1
+  \item Неупорядоченный пункт 2
+\end{itemize}
+
+\begin{enumerate}
+  \item Первый шаг
+  \item Второй шаг
+  \item
+\begin{lstlisting}[language=Bash, caption={Вложенный листинг}, label=lst.nested]
+cargo test
+\end{lstlisting}
+
+\end{enumerate}
+
+\begin{algorithm}
+\caption{Двоичный поиск}\label{alg.search}
+\begin{algorithmic}[1]
+  \Require отсортированный массив $A$, целевое значение $x$
+  \State $lo \gets 0$, $hi \gets n-1$
+  \While{$lo \leq hi$}
+    \State $mid \gets \lfloor(lo+hi)/2\rfloor$
+    \If{$A[mid] = x$}
+      \State \Return $mid$
+    \Else
+      \If{$A[mid] < x$}
+        \State $lo \gets mid + 1$
+      \Else
+        \State $hi \gets mid - 1$
+      \EndIf
+    \EndIf
+  \EndWhile
+  \State \Return $-1$
+  \Comment{Поиск завершён}
+  \Ensure индекс $x$ или $-1$
+  \For{$i \in 1..n$}
+    \State печать $i$
+  \EndFor
+\end{algorithmic}
+\end{algorithm}
+
+\begin{tcolorbox}[colback=blue!5!white, colframe=blue!50!black, title=Важно]
+Алгоритм \textbf{двоичного поиска} требует отсортированных входных данных.
+\end{tcolorbox}
+
+\begin{tcolorbox}[colback=red!5!white, colframe=red!60!black, title=Предупреждение]
+Не используйте отрицательные индексы.
+\end{tcolorbox}
+
+\subsection{Пример подраздела}
+
+Этот подраздел подтверждает обработку вложенных разделов. Также приведена ссылка на \cite{ref.ivanov}.
+
+
+\addcontentsline{toc}{section}{Список литературы}
+
+\begin{thebibliography}{4}
+  \bibitem{ref.knuth}
+  Кнут Д.Э. Искусство программирования, Том 1. --- Рединг: Аддисон-Уэсли, 1997. 672 с.
+  \bibitem{ref.shannon}
+  Шеннон К.Э. Математическая теория связи // Технический журнал Bell System. Т. 27. 1948. С. 379–423.
+  \bibitem{ref.qt}
+  Документация Qt. --- URL: \url{https://doc.qt.io} (дата обращения: 2026-04-24).
+  \bibitem{ref.ivanov}
+  Иванов И.И. Методы вероятностного моделирования: дис. ... канд. техн. наук. --- Москва, 2020. 150 с.
+\end{thebibliography}
+
+
+\end{document}
